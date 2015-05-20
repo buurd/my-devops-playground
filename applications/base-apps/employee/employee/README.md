@@ -15,20 +15,20 @@ To start a web server for the application, run:
 
 
 ## Services
-Add a user:
-curl -X POST localhost:3000/add-user --data 'user={"5" : {"first-name": "Bertil"}}'
+Add an empoloyee:
+curl -X POST localhost:3000/add-employee --data 'employee={"5" : {"first-name": "Bertil"}}'
 
-Get all users:
+Get all employees:
 curl -X GET localhost:3000
 
-Get a specific user:
-curl -X GET localhost:3000/get-user --data 'user-id=5'
+Get a specific employee:
+curl -X GET localhost:3000/get-employee --data 'employee-id=5'
 
-Update a user:
-curl -X PUT localhost:3000/update-user --data 'user={"5" : {"first-name": "Bertil", "last-name": "ll"}}'
+Update an employee:
+curl -X PUT localhost:3000/update-employee --data 'employee={"5" : {"first-name": "Bertil", "last-name": "ll"}}'
 
-Delete a user:
-curl -X DELETE localhost:3000/delete-user --data 'user-id=5'
+Delete an employee:
+curl -X DELETE localhost:3000/delete-employee --data 'employee-id=5'
 
 ## Docker deployment
 

@@ -15,37 +15,37 @@
   :etag "fixed-etag"
   :available-media-types ["application/json"])
 
-(defresource get-user
+(defresource get-employee
   :allowed-methods [:get]
   :handle-ok (fn [context]
          (let [params (get-in context [:request :form-params])]
-             (let [obj  (get params "user-id")]
+             (let [obj  (get params "employee-id")]
                (generate-string (@employees obj)))))
   :available-media-types ["application/json"])
 
-(defresource add-user
+(defresource add-employee
   :allowed-methods [:post]
   :post! (fn [context]
            (let [params (get-in context [:request :form-params])]
-             (let [obj (parse-string (get params "user"))]
+             (let [obj (parse-string (get params "employee"))]
                (swap! employees assoc (first (first obj)) (second (first obj)))
                (println employees))))
   :available-media-types ["application/json"])
 
-(defresource update-user
+(defresource update-employee
   :allowed-methods [:put]
   :put! (fn [context]
            (let [params (get-in context [:request :form-params])]
-             (let [obj (parse-string (get params "user"))]
+             (let [obj (parse-string (get params "employee"))]
                (swap! employees assoc (first (first obj)) (second (first obj)))
                (println employees))))
   :available-media-types ["application/json"])
 
-(defresource delete-user
+(defresource delete-employee
   :allowed-methods [:delete]
   :delete! (fn [context]
              (let [params (get-in context[:request :form-params])]
-               (let [obj (parse-string (get params "user-id"))]
+               (let [obj (parse-string (get params "employee-id"))]
                  (swap! employees dissoc (first (first obj)))
                  (println employees))))
   :available-media-types ["application/json"])
@@ -56,7 +56,7 @@
 
 (defroutes home-routes
   (ANY "/" request home)
-  (ANY "/get-user" request get-user)
-  (ANY "/add-user" request add-user)
-  (ANY "/update-user" request update-user)
-  (ANY "/delete-user" request delete-user))
+  (ANY "/get-employee" request get-employee)
+  (ANY "/add-employee" request add-employee)
+  (ANY "/update-employee" request update-employee)
+  (ANY "/delete-employee" request delete-employee))
