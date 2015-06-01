@@ -34,5 +34,6 @@ curl -X DELETE localhost:3000/delete-customer --data 'customer-id=5'
 
 From the root of this project
 
+sudo docker pull clojure
 sudo docker build -t customer .
 sudo docker run -it --rm --name running-app customer

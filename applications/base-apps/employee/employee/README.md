@@ -34,5 +34,6 @@ curl -X DELETE localhost:3000/delete-employee --data 'employee-id=5'
 
 From the root of this project
 
+sudo docker pull clojure
 sudo docker build -t employee .
 sudo docker run -it --rm --name running-app employee

@@ -1,4 +1,4 @@
-# product
+# order
 
 
 ## Prerequisites
@@ -15,7 +15,7 @@ To start a web server for the application, run:
 
 
 ## Services
-Add an product:
+Add an order:
 curl -X POST localhost:3000/add-product --data 'product={"5" : {"name": "Bertil"}}'
 
 Get all products
