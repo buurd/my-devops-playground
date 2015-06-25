@@ -1,0 +1,36 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"employee",
+      "labels":{
+         "name":"employee"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"employee"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"employee"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"employee",
+                  "image":"employee",
+                  "ports":[
+                     {
+                        "containerPort":3000
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

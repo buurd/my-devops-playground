@@ -1,0 +1,21 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"customer",
+      "labels":{
+         "name":"customer"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":3000,
+          "targetPort":3000
+        }
+      ],
+      "selector":{
+         "name":"customer"
+      }
+   }
+}

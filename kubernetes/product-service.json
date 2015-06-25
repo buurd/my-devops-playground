@@ -1,0 +1,21 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"product",
+      "labels":{
+         "name":"product"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":3000,
+          "targetPort":3000
+        }
+      ],
+      "selector":{
+         "name":"product"
+      }
+   }
+}

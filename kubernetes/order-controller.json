@@ -1,0 +1,36 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"order",
+      "labels":{
+         "name":"order"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"order"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"order"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"order",
+                  "image":"order",
+                  "ports":[
+                     {
+                        "containerPort":3000
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
